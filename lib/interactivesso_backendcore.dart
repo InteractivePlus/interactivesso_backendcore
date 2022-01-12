@@ -19,3 +19,8 @@ export 'src/Factories/User/usertokenfactory.dart';
 export 'src/Factories/VeriCode/vericodefactory.dart';
 
 export 'src/ServiceProvider/Captcha/captchaserviceprovider.dart';
+
+export 'src/ServiceProvider/Sender/ContentSender.dart';
+export 'src/ServiceProvider/Sender/Template/VerificationCodeContentProvider.dart';
+export 'src/ServiceProvider/Sender/VerificationCodeSender.dart';
+export 'src/ServiceProvider/Sender/VerificationCodeSenderWithContentProvider.dart';
