@@ -82,7 +82,8 @@ class AppInfoFactorySearchClearParam implements Serializable<Map<String,dynamic>
 abstract class AppInfoFactory implements
   PersistantStorageCreatable<ApplicationInfo,AppInfoFactoryCreateInfo>,
   PersistantStorageModifiable<ApplicationInfo,AppInfoFactoryUpdateQueryParam,AppInfoFactorySearchClearParam>,
-  PersistantStorageSearchable<ApplicationInfo,AppInfoFactoryUpdateQueryParam,AppInfoFactorySearchClearParam>,
+  PersistantStorageSearchable<ApplicationInfo,AppInfoFactorySearchClearParam>,
+  PersistantStorageFetchable<ApplicationInfo,AppInfoFactoryUpdateQueryParam>,
   PersistantStorageInstallable,
   PersistantStorageUninstallable
 {
