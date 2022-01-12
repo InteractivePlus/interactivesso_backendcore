@@ -44,7 +44,8 @@ class APPGroupFactorySearchClearParam implements Serializable<Map<String,dynamic
 
 abstract class APPGroupFactory implements
   PersistantStorageCreatable<APPGroupInfo,APPGroupFactoryCreateInfo>,
-  PersistantStorageSearchable<APPGroupInfo, APPGroupFactoryUpdateQueryParam, APPGroupFactorySearchClearParam>,
+  PersistantStorageSearchable<APPGroupInfo, APPGroupFactorySearchClearParam>,
+  PersistantStorageFetchable<APPGroupInfo, APPGroupFactoryUpdateQueryParam>,
   PersistantStorageInstallable,
   PersistantStorageUninstallable
 {

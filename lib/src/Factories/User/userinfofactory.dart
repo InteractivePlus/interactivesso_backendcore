@@ -5,7 +5,7 @@ import 'package:phone_numbers_parser/phone_numbers_parser.dart';
 
 part 'userinfofactory.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(includeIfNull: false)
 class UserInfoFactoryCreateInfo implements Serializable<Map<String,dynamic>>{
   @JsonKey(required: true, name: 'user_group')
   String belongedGroupId;
@@ -43,6 +43,9 @@ class UserInfoFactoryCreateInfo implements Serializable<Map<String,dynamic>>{
 
   @JsonKey(name: 'locale')
   String? localeCode;
+
+  @JsonKey(name: 'avatar_hash')
+  String? avatarHash;
 
   @JsonKey(required: true, name:'account_create_info', fromJson: AccountCreateInfo.fromJson, toJson: Serializable.convertToDynamicSerialized)
   AccountCreateInfo accountCreateInfo;
@@ -125,7 +128,8 @@ class UserInfoFactorySearchClearParam implements Serializable<Map<String,dynamic
 abstract class UserInfoFactory implements 
   PersistantStorageCreatable<UserInfo,UserInfoFactoryCreateInfo>, 
   PersistantStorageModifiable<UserInfo,UserInfoFactoryUpdateQueryParam,UserInfoFactorySearchClearParam>, 
-  PersistantStorageSearchable<UserInfo, UserInfoFactoryUpdateQueryParam, UserInfoFactorySearchClearParam>,
+  PersistantStorageFetchable<UserInfo,UserInfoFactoryUpdateQueryParam>,
+  PersistantStorageSearchable<UserInfo, UserInfoFactorySearchClearParam>,
   PersistantStorageInstallable,
   PersistantStorageUninstallable
 {

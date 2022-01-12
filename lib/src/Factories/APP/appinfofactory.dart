@@ -4,7 +4,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'appinfofactory.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(includeIfNull: false)
 class AppInfoFactoryCreateInfo implements Serializable<Map<String,dynamic>>{
   @JsonKey(required: true, name: 'app_group')
   String belongedAPPGroupId;
@@ -26,6 +26,9 @@ class AppInfoFactoryCreateInfo implements Serializable<Map<String,dynamic>>{
 
   @JsonKey(required: true, name: 'manage_info')
   ApplicationManagementInfo manageInfo;
+
+  @JsonKey(name: 'avatar_hash')
+  String? avatarHash;
 
   @override
   Map<String,dynamic> serialize([String? locale]) => _$AppInfoFactoryCreateInfoToJson(this);

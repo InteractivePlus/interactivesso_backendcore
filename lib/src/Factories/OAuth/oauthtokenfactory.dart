@@ -138,7 +138,8 @@ abstract class OAuthTokenFactory implements
 }
 
 abstract class OAuthTokenFactorySearchable implements
-  PersistantStorageSearchable<OAuthToken, OAuthTokenFactoryUpdateQueryParam, OAuthTokenFactorySearchClearParam>
+  PersistantStorageSearchable<OAuthToken, OAuthTokenFactorySearchClearParam>,
+  PersistantStorageFetchable<OAuthToken, OAuthTokenFactoryUpdateQueryParam>
 {
 
 }

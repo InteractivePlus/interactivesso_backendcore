@@ -121,7 +121,8 @@ class OAuthVericodeFactorySearchClearParam implements Serializable<Map<String,dy
 abstract class OAuthVeriCodeFactory implements
   PersistantStorageCreatable<OAuthVeriCode, OAuthVeriCodeFactoryCreateInfo>,
   PersistantStorageModifiable<OAuthVeriCode, OAuthVericodeFactoryUpdateQueryParam, OAuthVericodeFactorySearchClearParam>,
-  PersistantStorageSearchable<OAuthVeriCode, OAuthVericodeFactoryUpdateQueryParam, OAuthVericodeFactorySearchClearParam>,
+  PersistantStorageSearchable<OAuthVeriCode, OAuthVericodeFactorySearchClearParam>,
+  PersistantStorageFetchable<OAuthVeriCode, OAuthVericodeFactoryUpdateQueryParam>,
   PersistantStorageInstallable,
   PersistantStorageUninstallable
 {

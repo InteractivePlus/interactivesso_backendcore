@@ -125,7 +125,8 @@ abstract class UserTokenFactory implements
 }
 
 abstract class UserTokenFactorySearchable implements
-  PersistantStorageSearchable<UserToken, UserTokenFactoryUpdateQueryParam, UserTokenFactorySearchClearParam>
+  PersistantStorageSearchable<UserToken, UserTokenFactorySearchClearParam>,
+  PersistantStorageFetchable<UserToken, UserTokenFactoryUpdateQueryParam>
 {
 
 }

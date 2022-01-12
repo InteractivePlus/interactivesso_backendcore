@@ -124,7 +124,8 @@ class VericodeFactorySearchClearParam implements Serializable<Map<String,dynamic
 abstract class VeriCodeFactory implements
   PersistantStorageCreatable<VerificationCode, VeriCodeFactoryCreateInfo>,
   PersistantStorageModifiable<VerificationCode, VericodeFactoryUpdateQueryParam, VericodeFactorySearchClearParam>,
-  PersistantStorageSearchable<VerificationCode, VericodeFactoryUpdateQueryParam, VericodeFactorySearchClearParam>,
+  PersistantStorageSearchable<VerificationCode, VericodeFactorySearchClearParam>,
+  PersistantStorageFetchable<VerificationCode, VericodeFactoryUpdateQueryParam>,
   PersistantStorageInstallable,
   PersistantStorageUninstallable
 {

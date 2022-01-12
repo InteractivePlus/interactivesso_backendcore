@@ -43,7 +43,8 @@ class UserGroupFactorySearchClearParam implements Serializable<Map<String,dynami
 }
 
 abstract class UserGroupFactory implements
-  PersistantStorageSearchable<UserGroupInfo, UserGroupFactoryUpdateQueryParam, UserGroupFactorySearchClearParam>,
+  PersistantStorageSearchable<UserGroupInfo, UserGroupFactorySearchClearParam>,
+  PersistantStorageFetchable<UserGroupInfo, UserGroupFactoryUpdateQueryParam>,
   PersistantStorageInstallable,
   PersistantStorageUninstallable
 {

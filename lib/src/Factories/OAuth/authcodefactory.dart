@@ -100,7 +100,8 @@ class AuthCodeFactorySearchClearParam implements Serializable<Map<String,dynamic
 
 abstract class AuthCodeFactory implements
   PersistantStorageCreatable<AuthorizationCode, AuthCodeFactoryCreateInfo>,
-  PersistantStorageSearchable<AuthorizationCode, AuthCodeFactoryUpdateQueryParam, AuthCodeFactorySearchClearParam>,
+  PersistantStorageSearchable<AuthorizationCode, AuthCodeFactorySearchClearParam>,
+  PersistantStorageFetchable<AuthorizationCode, AuthCodeFactoryUpdateQueryParam>,
   PersistantStorageModifiable<AuthorizationCode, AuthCodeFactoryUpdateQueryParam, AuthCodeFactorySearchClearParam>,
   PersistantStorageInstallable,
   PersistantStorageUninstallable
