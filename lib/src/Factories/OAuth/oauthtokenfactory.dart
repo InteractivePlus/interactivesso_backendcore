@@ -15,6 +15,9 @@ class OAuthTokenFactoryCreateInfo implements Serializable<Map<String,dynamic>>{
 
   @JsonKey(required:true, name: 'exchange_method', toJson: Serializable.convertToDynamicSerialized, fromJson: ExchangeMethod.fromJson)
   ExchangeMethod exchangeMethod;
+
+  @JsonKey(required: true, name: 'oauth_setting')
+  OAuthPermissionInfo authorizedOAuthSetting;
   
   @JsonKey(required: true, name: 'user_unique_id')
   String userUniqueId;
@@ -40,6 +43,7 @@ class OAuthTokenFactoryCreateInfo implements Serializable<Map<String,dynamic>>{
     required this.accessTokenExpires,
     required this.refreshTokenExpires,
     required this.exchangeMethod,
+    required this.authorizedOAuthSetting,
     this.customRole,
     required this.valid
   });

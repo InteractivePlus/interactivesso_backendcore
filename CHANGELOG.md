@@ -1,3 +1,7 @@
+## 0.0.4
+
+- Comply with changes made in datatypes repo 0.0.7
+
 ## 0.0.3
 
 - Add Avatar Factories

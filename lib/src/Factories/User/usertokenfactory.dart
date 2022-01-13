@@ -15,7 +15,7 @@ class UserTokenFactoryCreateInfo implements Serializable<Map<String,dynamic>>{
   @JsonKey(required: true, name: 'user_unique_id')
   String userUniqueId;
 
-  @JsonKey(required: true, name: 'required')
+  @JsonKey(required: true, name: 'valid')
   bool valid;
 
   @JsonKey(name: 'issued_ip')
