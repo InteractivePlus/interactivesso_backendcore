@@ -27,4 +27,7 @@ class VerificationCodeSenderWithContentProvider<RecipientType, ContentType> impl
     ContentType contentToSend = await contentProvider.getContentForVerificationCode(code, user, userAvatar, locale);
     await sendContentToUser(user,contentToSend);
   }
+
+  @override
+  CommunicationMethod get communicationMethod => contentSender.communicationMethod;
 } 

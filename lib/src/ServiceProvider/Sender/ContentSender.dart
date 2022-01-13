@@ -5,6 +5,7 @@ import 'package:phone_numbers_parser/phone_numbers_parser.dart';
 abstract class ContentSender<ReceiveAddressType, ContentType>{
   Future<void> sendContent(ReceiveAddressType recipient, ContentType content);
   Future<void> sendContentToUser(UserInfo user, ContentType content);
+  CommunicationMethod get communicationMethod;
 }
 
 typedef EmailSender = ContentSender<String, String>;
