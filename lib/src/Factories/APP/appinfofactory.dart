@@ -56,10 +56,10 @@ typedef AppInfoFactoryUpdateQueryParam = String;
 
 @JsonSerializable(includeIfNull: false)
 class AppInfoFactorySearchClearParam implements Serializable<Map<String,dynamic>>{
-  @JsonKey(name: 'related_manage_username')
+  @JsonKey(name: 'related_manage_user_unique_id')
   String? searchManageUsername;
 
-  @JsonKey(name: 'related_create_username')
+  @JsonKey(name: 'related_create_user_unique_id')
   String? searchCreateUsername;
 
   @JsonKey(name: 'display_name')
