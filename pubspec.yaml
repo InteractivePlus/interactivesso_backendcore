@@ -19,6 +19,6 @@ dev_dependencies:
 dependencies: 
   image: ^3.1.0
   interactiveplus_shared_dart: ^0.0.11
-  interactivesso_datatypes: ^0.0.8
+  interactivesso_datatypes: ^0.0.9
   json_annotation: ^4.4.0
   phone_numbers_parser: ^4.2.0
