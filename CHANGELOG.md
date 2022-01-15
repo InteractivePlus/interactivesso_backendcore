@@ -1,3 +1,9 @@
+## 0.0.5
+
+- Bump interactivesso_datatypes to version 0.0.9
+- Accumulated Bugfix
+- Add User Search Parameters
+
 ## 0.0.4
 
 - Comply with changes made in datatypes repo 0.0.7

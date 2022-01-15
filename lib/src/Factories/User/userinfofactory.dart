@@ -114,12 +114,15 @@ class UserInfoFactorySearchClearParam implements Serializable<Map<String,dynamic
   @JsonKey(name: 'locale')
   String? localeCode;
 
+  @JsonKey(name: 'display_name')
+  String? displaynamePartial;
+
   @override
   Map<String,dynamic> serialize([String? locale]) => _$UserInfoFactorySearchClearParamToJson(this);
   @override
   Map<String,dynamic> toJson() => serialize(null);
 
-  UserInfoFactorySearchClearParam({this.usernamePartial, this.belongedGroupId, this.emailPartial, this.phonePartial, this.nicknamePartial, this.signaturePartial, this.areaAlpha2Code, this.localeCode});
+  UserInfoFactorySearchClearParam({this.usernamePartial, this.belongedGroupId, this.emailPartial, this.phonePartial, this.nicknamePartial, this.displaynamePartial, this.signaturePartial, this.areaAlpha2Code, this.localeCode});
   factory UserInfoFactorySearchClearParam.fromMap(Map<String,dynamic> map) => _$UserInfoFactorySearchClearParamFromJson(map);
   static UserInfoFactorySearchClearParam fromJson(Map<String,dynamic> json) => UserInfoFactorySearchClearParam.fromMap(json);
   static UserInfoFactorySearchClearParam? fromJsonNullable(Map<String,dynamic>? json) => json == null ? null : fromJson(json);
