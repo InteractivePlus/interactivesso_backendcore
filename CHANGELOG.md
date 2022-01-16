@@ -1,3 +1,8 @@
+## 0.0.6
+
+- Add Common Functions in BackendCore
+- Add Backend Settings
+
 ## 0.0.5
 
 - Bump interactivesso_datatypes to version 0.0.9

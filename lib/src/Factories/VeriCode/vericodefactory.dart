@@ -14,8 +14,8 @@ class VeriCodeFactoryCreateInfo implements Serializable<Map<String,dynamic>>{
   @JsonKey(required: true, name: 'is_short_id')
   bool isShortId;
 
-  @JsonKey(required: true, name: 'username')
-  String relatedUsername;
+  @JsonKey(required: true, name: 'user_unique_id')
+  String relatedUserUniqueId;
 
   @JsonKey(required: true, name: 'expires')
   ExpirableInfo expires;
@@ -35,7 +35,7 @@ class VeriCodeFactoryCreateInfo implements Serializable<Map<String,dynamic>>{
   @override
   Map<String,dynamic> toJson() => serialize(null);
 
-  VeriCodeFactoryCreateInfo({required this.vericodeId, required this.isShortId, required this.relatedUsername, required this.expires, required this.issueTimeRemoteIp, required this.sentMethod, this.useScope});
+  VeriCodeFactoryCreateInfo({required this.vericodeId, required this.isShortId, required this.relatedUserUniqueId, required this.expires, required this.issueTimeRemoteIp, required this.sentMethod, this.useScope});
   factory VeriCodeFactoryCreateInfo.fromMap(Map<String,dynamic> map) => _$VeriCodeFactoryCreateInfoFromJson(map);
   static VeriCodeFactoryCreateInfo fromJson(Map<String,dynamic> json) => VeriCodeFactoryCreateInfo.fromMap(json);
   static VeriCodeFactoryCreateInfo? fromJsonNullable(Map<String,dynamic>? json){

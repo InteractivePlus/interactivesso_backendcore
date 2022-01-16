@@ -57,10 +57,10 @@ typedef AppInfoFactoryUpdateQueryParam = String;
 @JsonSerializable(includeIfNull: false)
 class AppInfoFactorySearchClearParam implements Serializable<Map<String,dynamic>>{
   @JsonKey(name: 'related_manage_user_unique_id')
-  String? searchManageUsername;
+  String? searchManageUserUniqueId;
 
   @JsonKey(name: 'related_create_user_unique_id')
-  String? searchCreateUsername;
+  String? searchCreateUserUniqueId;
 
   @JsonKey(name: 'display_name')
   String? displayNamePartial;
@@ -73,7 +73,7 @@ class AppInfoFactorySearchClearParam implements Serializable<Map<String,dynamic>
   @override
   Map<String, dynamic> toJson() => serialize(null);
   
-  AppInfoFactorySearchClearParam({this.searchManageUsername,this.searchCreateUsername, this.descriptionPartial, this.displayNamePartial});
+  AppInfoFactorySearchClearParam({this.searchManageUserUniqueId,this.searchCreateUserUniqueId, this.descriptionPartial, this.displayNamePartial});
   factory AppInfoFactorySearchClearParam.fromMap(Map<String,dynamic> map) => _$AppInfoFactorySearchClearParamFromJson(map);
   static AppInfoFactorySearchClearParam fromJson(Map<String,dynamic> json) => AppInfoFactorySearchClearParam.fromMap(json);
   static AppInfoFactorySearchClearParam? fromJsonNullable(Map<String,dynamic>? json) => json == null ? null : fromJson(json);
@@ -89,4 +89,5 @@ abstract class AppInfoFactory implements
 {
   Future<void> migrateAllAppUnderGroupToNewGroup(String groupId, String newGroupId);
   Future<APPPermissionInfo?> getAppPermissionOverride(AppInfoFactoryUpdateQueryParam queryParam);
+  Future<int> searchAvatarHashReferenceCount(String avatarHash);
 }

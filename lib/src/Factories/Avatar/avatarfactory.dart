@@ -44,7 +44,7 @@ abstract class AvatarFactory implements
   String hashFunc(List<int> pngEncoded);
 
   Future<int> getTotalStoredAvatars();
-  Future<SearchResult<String>> listExistingAvatarHashs({int offset = 0, int limit = -1});
+  Future<SearchResult<String>> listExistingAvatarHashs({int offset = 0, int? limit});
   @override
   Future<AvatarInfo> createNew(AvatarFactoryCreateType createInfo) async {
     late AvatarInfo avatarInfo;

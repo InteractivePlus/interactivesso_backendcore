@@ -144,4 +144,5 @@ abstract class UserInfoFactory implements
   Future<bool> doesExistByPhoneNumber(PhoneNumber phoneNum);
   Future<void> migrateAllUserUnderGroupToNewGroup(String groupId, String newGroupId);
   Future<UserPermissionInfo?> getUserPermissionOverride(UserInfoFactoryUpdateQueryParam queryParam);
+  Future<int> searchAvatarHashReferenceCount(String avatarHash);
 }
