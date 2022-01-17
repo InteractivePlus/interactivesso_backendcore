@@ -5,8 +5,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'appgroupfactory.g.dart';
 
-typedef APPGroupFactoryCreateInfo = APPGroupInfo;
-
 ///GroupId
 typedef APPGroupFactoryUpdateQueryParam = String;
 
@@ -43,7 +41,7 @@ class APPGroupFactorySearchClearParam implements Serializable<Map<String,dynamic
 }
 
 abstract class APPGroupFactory implements
-  PersistantStorageCreatable<APPGroupInfo,APPGroupFactoryCreateInfo>,
+  PersistantStorageCreatable<APPGroupInfo,APPGroupInfo>,
   PersistantStorageSearchable<APPGroupInfo, APPGroupFactorySearchClearParam>,
   PersistantStorageFetchable<APPGroupInfo, APPGroupFactoryUpdateQueryParam>,
   PersistantStorageInstallable,

@@ -11,6 +11,7 @@ export 'src/Factories/Avatar/avatarfactory.dart';
 export 'src/Factories/OAuth/authcodefactory.dart';
 export 'src/Factories/OAuth/oauthtokenfactory.dart';
 export 'src/Factories/OAuth/oauthvericodefactory.dart';
+export 'src/Factories/OAuth/useroauthauthorizationfactory.dart';
 
 export 'src/Factories/User/userinfofactory.dart';
 export 'src/Factories/User/usergroupfactory.dart';

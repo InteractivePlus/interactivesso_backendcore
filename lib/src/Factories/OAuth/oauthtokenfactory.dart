@@ -16,17 +16,11 @@ class OAuthTokenFactoryCreateInfo implements Serializable<Map<String,dynamic>>{
   @JsonKey(required:true, name: 'exchange_method', toJson: Serializable.convertToDynamicSerialized, fromJson: ExchangeMethod.fromJson)
   ExchangeMethod exchangeMethod;
 
-  @JsonKey(required: true, name: 'oauth_setting')
-  OAuthPermissionInfo authorizedOAuthSetting;
-  
   @JsonKey(required: true, name: 'user_unique_id')
   String userUniqueId;
 
   @JsonKey(required: true, name: 'client_id')
   String appClientId;
-
-  @JsonKey(name: 'custom_role')
-  int? customRole;
 
   @JsonKey(required: true, name: 'valid')
   bool valid;
@@ -43,8 +37,6 @@ class OAuthTokenFactoryCreateInfo implements Serializable<Map<String,dynamic>>{
     required this.accessTokenExpires,
     required this.refreshTokenExpires,
     required this.exchangeMethod,
-    required this.authorizedOAuthSetting,
-    this.customRole,
     required this.valid
   });
   factory OAuthTokenFactoryCreateInfo.fromMap(Map<String,dynamic> map) => _$OAuthTokenFactoryCreateInfoFromJson(map);
@@ -100,8 +92,6 @@ class OAuthTokenFactorySearchClearParam implements Serializable<Map<String,dynam
   String? userUniqueId;
   @JsonKey(name:'client_id')
   String? appClientId;
-  @JsonKey(name:'custom_role')
-  int? customRole;
   @JsonKey(required:false, name:'exchange_method', toJson: Serializable.convertToDynamicSerializedWithNullable, fromJson: ExchangeMethod.fromJsonNullable)
   ExchangeMethod? exchangeMethod;
   @JsonKey(name:'valid')
@@ -115,7 +105,6 @@ class OAuthTokenFactorySearchClearParam implements Serializable<Map<String,dynam
     this.refreshTokenExpireMax,
     this.userUniqueId,
     this.appClientId,
-    this.customRole,
     this.exchangeMethod,
     this.validFilter
   });

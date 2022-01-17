@@ -8,9 +8,6 @@ part 'vericodefactory.g.dart';
 
 @JsonSerializable()
 class VeriCodeFactoryCreateInfo implements Serializable<Map<String,dynamic>>{
-  @JsonKey(required: true, name: "vericode_id")
-  String vericodeId;
-
   @JsonKey(required: true, name: 'is_short_id')
   bool isShortId;
 
@@ -35,7 +32,7 @@ class VeriCodeFactoryCreateInfo implements Serializable<Map<String,dynamic>>{
   @override
   Map<String,dynamic> toJson() => serialize(null);
 
-  VeriCodeFactoryCreateInfo({required this.vericodeId, required this.isShortId, required this.relatedUserUniqueId, required this.expires, required this.issueTimeRemoteIp, required this.sentMethod, this.useScope});
+  VeriCodeFactoryCreateInfo({required this.isShortId, required this.relatedUserUniqueId, required this.expires, required this.issueTimeRemoteIp, required this.sentMethod, this.useScope});
   factory VeriCodeFactoryCreateInfo.fromMap(Map<String,dynamic> map) => _$VeriCodeFactoryCreateInfoFromJson(map);
   static VeriCodeFactoryCreateInfo fromJson(Map<String,dynamic> json) => VeriCodeFactoryCreateInfo.fromMap(json);
   static VeriCodeFactoryCreateInfo? fromJsonNullable(Map<String,dynamic>? json){

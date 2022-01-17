@@ -5,8 +5,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'usergroupfactory.g.dart';
 
-typedef UserGroupFactoryCreateInfo = UserGroupInfo;
-
 ///GroupId
 typedef UserGroupFactoryUpdateQueryParam = String;
 
@@ -53,7 +51,7 @@ abstract class UserGroupFactory implements
 }
 
 abstract class UserGroupFactoryMutable implements
-  PersistantStorageCreatable<UserGroupInfo, UserGroupFactoryCreateInfo>,
+  PersistantStorageCreatable<UserGroupInfo, UserGroupInfo>,
   PersistantStorageModifiable<UserGroupInfo, UserGroupFactoryUpdateQueryParam, UserGroupFactorySearchClearParam>
 {
   Future<void> setDefaultGroup(String? groupId);

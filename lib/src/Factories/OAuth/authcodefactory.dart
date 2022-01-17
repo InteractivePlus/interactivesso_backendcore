@@ -16,9 +16,6 @@ class AuthCodeFactoryCreateInfo implements Serializable<Map<String,dynamic>>{
   @JsonKey(required: true, name: 'client_id')
   String appClientId;
 
-  @JsonKey(required: true, name: 'oauth_setting')
-  OAuthPermissionInfo authorizedOAuthSetting;
-
   @JsonKey(required: true, name: 'time_info')
   ExpirableInfo expirableInfo;
 
@@ -40,7 +37,6 @@ class AuthCodeFactoryCreateInfo implements Serializable<Map<String,dynamic>>{
     required this.challengeType, 
     required String? challenge, 
     required this.appClientId, 
-    required this.authorizedOAuthSetting, 
     required this.expirableInfo, 
     required this.userUniqueId, 
     required this.exchangeMethod}
@@ -100,11 +96,21 @@ class AuthCodeFactorySearchClearParam implements Serializable<Map<String,dynamic
 
 abstract class AuthCodeFactory implements
   PersistantStorageCreatable<AuthorizationCode, AuthCodeFactoryCreateInfo>,
-  PersistantStorageSearchable<AuthorizationCode, AuthCodeFactorySearchClearParam>,
   PersistantStorageFetchable<AuthorizationCode, AuthCodeFactoryUpdateQueryParam>,
-  PersistantStorageModifiable<AuthorizationCode, AuthCodeFactoryUpdateQueryParam, AuthCodeFactorySearchClearParam>,
   PersistantStorageInstallable,
   PersistantStorageUninstallable
 {
 
+}
+
+abstract class AuthCodeFactorySearchable implements
+  PersistantStorageSearchable<AuthorizationCode, AuthCodeFactorySearchClearParam>
+{
+
+}
+
+abstract class AuthCodeFactoryMutable implements
+PersistantStorageModifiable<AuthorizationCode, AuthCodeFactoryUpdateQueryParam, AuthCodeFactorySearchClearParam>
+{
+  
 }

@@ -1,3 +1,8 @@
+## 0.0.7
+
+- Code review done by [@ToiletCommander](https://github.com/ToiletCommandeer)
+- Comply with [interactivesso_datatypes](https://github.com/InteractivePlus/interactivesso_datatypes) 0.0.11
+
 ## 0.0.6
 
 - Add Common Functions in BackendCore

@@ -70,7 +70,7 @@ class UserInfoFactoryCreateInfo implements Serializable<Map<String,dynamic>>{
     required this.accountCreateInfo,
     required this.permissionOverride,
     this.passwordHash,
-    this.accountStatus = AccountStatus.NORMAL, 
+    required this.accountStatus, 
     this.emailVerified = false,
     this.phoneVerified = false,
     this.nickname,
@@ -145,4 +145,7 @@ abstract class UserInfoFactory implements
   Future<void> migrateAllUserUnderGroupToNewGroup(String groupId, String newGroupId);
   Future<UserPermissionInfo?> getUserPermissionOverride(UserInfoFactoryUpdateQueryParam queryParam);
   Future<int> searchAvatarHashReferenceCount(String avatarHash);
+  Future<SearchResult<UserInfo>> searchUnverifiedUsers(int? createTimeMin, int? createTimeMax, {int offset = 0, int limit = -1});
+  Future<int> getTotalUnverifiedUsers(int? createTimeMin, int? createTimeMax);
+  Future<void> clearUnverifiedUsers(int? createTimeMin, int? createTimeMax, {int offset = 0, int limit = -1});
 }
